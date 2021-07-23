@@ -101,7 +101,7 @@ else {
         prompt("What's the number one city I want to visit?");
         console.log(prompt);
     }
-    alert(`All possible answers: New Orleans, St. Louis, San Diego, San Francisco  You answered  ${rightAnswers}  right answers out of 7`);
+    alert(`All possible answers: New Orleans, St. Louis, San Diego, San Francisco  You got  ${rightAnswers}  right answers out of 7 😊! `);
 }
 }
 } 
