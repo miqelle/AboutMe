@@ -4,7 +4,6 @@ const aboutMeQuiz =function gameQuestions ()
     let userName = prompt("Hi, what's your name?");
     alert("Welcome to my page " + userName + "!");
     alert(userName + " I'm going to ask you a series of questions!");
-    alert("You can only answer yes or no!");
     
     let nameQuestion = prompt("Is my first name Miqelle?");
     let answer = ("yes");
@@ -75,39 +74,45 @@ for (let tries = 1; tries < 5; tries++)
     if(userAnswer > 4)
     {
         alert("That's too high!");//Use alert if userAnswer is too high 
-    }
-    if(userAnswer < 4)//use alert if userAnser is too low
+        
+    } 
+    if (userAnswer < 4)//use alert if userAnser is too low
     {
         alert("That's too low!");
+    }
+    if (userAnswer == 4)
+    {
+        rightAnswers++;
+        alert("That's correct!");
+        break;///stops loop if userAnswer is equal to 4
     }
 }
 alert("The answer is 4!");//after all try's used alert("The answer is 4");
 
 
-let userAnswer = prompt("What city would I like to visit?");
-//create an array
+
+//an array for cities I want to visit
 let citiesToVisit = ['New Orleans', 'St. Louis', 'San Diego', 'San Francisco'];
 
+for ( i = 1; i <7; i++)//this for loop asks the user the question 6 times, and then tells them all possible answer
 {
-
-if ( userAnswer === citiesToVisit[0])
+    let userAnswer = prompt("What city would I like to visit?");
+    if ( userAnswer === citiesToVisit[0])
 {
-    alert("That's the number one city I want to visit! 😊");
     rightAnswers++;
+    alert(`That's the number one city I want to visit! You got  ${rightAnswers}  right answers out of 7 😊`);
+    break;
 }
-else {
-    for ( i = 0; i < 5; i++)//this for loop asks the user the question 6 times, and then tells them all possible answer
-    {
-        prompt("What's the number one city I want to visit?");
-        console.log(prompt);
-    }
-    alert(`All possible answers: New Orleans, St. Louis, San Diego, San Francisco  You got  ${rightAnswers}  right answers out of 7 😊! `);
+if (userAnswer !== citiesToVisit[0]) 
+{
+    alert(`All possible answers: New Orleans, St. Louis, San Diego, San Francisco  You got  ${rightAnswers}  right answers out of 7`);
 }
 }
-} 
+}
+
+
 let button = document.querySelector('button');
 button.addEventListener('click', aboutMeQuiz);
 
 
 gameQuestions();
-
